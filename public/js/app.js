@@ -1,4 +1,4 @@
-console.log('ceci est chargé');
+console.log('Bienvenu sur France 2 météo');
 
 const messageOne = document.querySelector('#message-1');
 const messageTwo = document.querySelector('#message-2');
@@ -9,7 +9,8 @@ const weatherForm = document
     .addEventListener('submit', function(e) {
         e.preventDefault();
         const url =
-            'http://localhost:5050/weather?address=' + inputSearch.value;
+            'https://mohand-weather-application.herokuapp.com/?address=' +
+            inputSearch.value;
         messageOne.textContent = 'Loading';
         messageOne.textContent = '';
 

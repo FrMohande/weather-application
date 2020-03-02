@@ -1,6 +1,7 @@
 # Personnal
 node_modules/
 template/views/help.hbs
+.vscode/
 
 
 
