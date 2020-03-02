@@ -8,9 +8,7 @@ const weatherForm = document
     .querySelector('form')
     .addEventListener('submit', function(e) {
         e.preventDefault();
-        const url =
-            'https://mohand-weather-application.herokuapp.com/?address=' +
-            inputSearch.value;
+        const url = '/?address=' + inputSearch.value;
         messageOne.textContent = 'Loading';
         messageOne.textContent = '';
 
