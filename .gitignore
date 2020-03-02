@@ -1,5 +1,5 @@
 # Personnal
-node_modules
+node_modules/
 template/views/help.hbs
 
 
