@@ -8,16 +8,17 @@ const geocode = (address, callback) => {
 
     request({ url: urlGeocoding, json: true }, (error, response) => {
         if (error) {
-            callback(
-                'We got a problem with your internet connection',
-                undefined
-            );
+            callback({
+                error: 'We got a problem with your internet connection'
+            });
         } else if (
             response.body.message === 'Not Authorized - No Token' ||
             response.body.message === 'Not found' ||
             response.body.features.length == 0
         ) {
-            console.log('Unable to connect to the API ', undefined);
+            callback({
+                error: 'Unable to connect to the API'
+            });
         } else {
             const data = {
                 longitude: response.body.features[0].center[0],

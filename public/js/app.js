@@ -1,7 +1,7 @@
-console.log('Bienvenu sur France 2 météo');
+console.log('Bienvenue sur France 2 météo');
 
-const messageOne = document.querySelector('#message-1');
-const messageTwo = document.querySelector('#message-2');
+let messageOne = document.querySelector('#message-1');
+let messageTwo = document.querySelector('#message-2');
 
 const inputSearch = document.querySelector('input[type=search]');
 const weatherForm = document
@@ -9,20 +9,19 @@ const weatherForm = document
     .addEventListener('submit', function(e) {
         e.preventDefault();
         const url = './weather?address=' + inputSearch.value;
-        messageOne.textContent = 'Loading';
-        messageOne.textContent = '';
+
+        messageOne.textContent = 'Chargement';
+        messageTwo.textContent = '';
 
         fetch(url).then(response => {
             response.json().then(result => {
                 if (result.error) {
                     messageOne.textContent = result.error;
-                    messageOne.textContent = '';
+                    messageTwo.textContent = '';
                 } else {
                     messageOne.textContent = result.data.place;
                     messageTwo.textContent = result.forecastData;
                 }
-                console.log(response);
-                console.log(result);
             });
         });
     });

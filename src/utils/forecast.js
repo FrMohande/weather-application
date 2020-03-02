@@ -30,9 +30,8 @@ const forecast = (longitude, latitude, callback) => {
                 '°C ' +
                 "et la chance qu'il pleuve est de " +
                 response.body.currently.precipProbability +
-                '% ';
+                '%.';
             response.body.currently.temperature;
-            console.log(urlWeather);
             callback(undefined, forecastMsg);
         }
     });

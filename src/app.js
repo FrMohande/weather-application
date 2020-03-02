@@ -31,13 +31,13 @@ app.get('/about', (req, res) => {
     });
 });
 
-app.get('/help', (req, res) => {
+/*app.get('/help', (req, res) => {
     res.render('help', {
         title: 'Help',
         fullname: 'Outioua Mohand',
         message: 'A CHANGER'
     });
-});
+});*/
 
 app.get('/weather', (req, res) => {
     if (!req.query.address) {
@@ -46,6 +46,12 @@ app.get('/weather', (req, res) => {
         });
     }
     geocode(req.query.address, (error, data) => {
+        if (error) {
+            return res.send({
+                error:
+                    'Impossible de trouver la localisation. Essayez une autre recherche.'
+            });
+        }
         forecast(data.longitude, data.latitude, (error, forecastData) => {
             if (error) {
                 return res.send({
