@@ -1,3 +1,13 @@
+# Personnal
+node_modules
+template/views/help.hbs
+
+
+
+
+
+
+
 # Logs
 logs
 *.log
@@ -102,3 +112,5 @@ dist
 
 # TernJS port file
 .tern-port
+
+
