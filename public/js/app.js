@@ -8,7 +8,7 @@ const weatherForm = document
     .querySelector('form')
     .addEventListener('submit', function(e) {
         e.preventDefault();
-        const url = '/?address=' + inputSearch.value;
+        const url = './?address=' + inputSearch.value;
         messageOne.textContent = 'Loading';
         messageOne.textContent = '';
 
